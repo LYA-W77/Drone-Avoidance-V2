@@ -1,0 +1,83 @@
+{
+    "SettingsVersion": 1.2,
+    "SimMode": "Multirotor",
+    "LocalHostIp": "0.0.0.0",
+    "ApiServerPort": 41451,
+    "Vehicles": {
+        "Drone1": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "DefaultVehicleConfig": {
+                "Mass": 1.2,
+                "DragCoefficient": 2.5,
+                "LiftCoefficient": 0.3,
+                "MaxThrust": 20.0,
+                "HoverThrottle": 0.45,
+                "AngleLevelMax": 35,
+                "AngleLevelRate": 2.5
+            },
+            "Sensors": {
+                "MyDistanceLeftLarge": {
+                    "SensorType": 5,
+                    "Enabled": true,
+                    "X": 1.0,
+                    "Y": -1.0,
+                    "Z": 0.0,
+                    "Yaw": 30,
+                    "Pitch": 0,
+                    "Roll": 0
+                },
+                "MyDistanceLeftSmall": {
+                    "SensorType": 5,
+                    "Enabled": true,
+                    "X": 1.0,
+                    "Y": -0.5,
+                    "Z": 0.0,
+                    "Yaw": 15,
+                    "Pitch": 0,
+                    "Roll": 0
+                },
+                "MyDistanceCenter": {
+                    "SensorType": 5,
+                    "Enabled": true,
+                    "X": 1.0,
+                    "Y": 0.0,
+                    "Z": 0.0,
+                    "Yaw": 0,
+                    "Pitch": 0,
+                    "Roll": 0
+                },
+                "MyDistanceRightSmall": {
+                    "SensorType": 5,
+                    "Enabled": true,
+                    "X": 1.0,
+                    "Y": 0.5,
+                    "Z": 0.0,
+                    "Yaw": -15,
+                    "Pitch": 0,
+                    "Roll": 0
+                },
+                "MyDistanceRightLarge": {
+                    "SensorType": 5,
+                    "Enabled": true,
+                    "X": 1.0,
+                    "Y": 1.0,
+                    "Z": 0.0,
+                    "Yaw": -30,
+                    "Pitch": 0,
+                    "Roll": 0
+                },
+                "": {
+                    "SensorType": 6,
+                    "Enabled": true,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": -0.5,
+                    "Range": 30.0,
+                    "NumberOfChannels": 16,
+                    "PointsPerSecond": 10000
+                }
+            }
+        }
+    }
+}
