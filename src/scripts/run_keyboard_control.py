@@ -29,7 +29,7 @@ class DroneRunner:
         self.mode = FlightMode.AUTO
         self.last_key_time = 0
         self.target_position = None
-        self.TARGET_DIST = 50.0
+        self.TARGET_DIST = 100.0
         self.ARRIVE_DIST = 2.0
         self.manual_speed = 2.0
         self.manual_vx, self.manual_vy = 0.0, 0.0
@@ -66,9 +66,9 @@ class DroneRunner:
 
     def run(self, max_time=120):
         try:
-            # 起飞并设定目标（左转90°）
+            # 起飞并设定目标（不左转90°）
             self.flight.takeoff(-5.0)
-            self.flight.rotate_in_place(-90)
+            #self.flight.rotate_in_place(-90)
             pos = self.flight.get_position()
             yaw = self.flight.get_yaw()
             self.target_position = np.array([
