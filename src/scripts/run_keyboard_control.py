@@ -10,7 +10,7 @@ from enum import Enum, auto
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.flight_controller import FlightController
 from perception.sensor_fusion import SensorFusion
-from decision.reactive_avoidance import ReactiveAvoidance
+from decision.advanced_avoidance import AdvancedAvoidance
 
 class FlightMode(Enum):
     MANUAL = auto()
@@ -25,11 +25,11 @@ class DroneRunner:
 
         self.flight = FlightController(self.client)
         self.perception = SensorFusion(self.client)
-        self.decision = ReactiveAvoidance()
+        self.decision = AdvancedAvoidance(safe_distance=5.0, cruise_speed=3.0)
         self.mode = FlightMode.AUTO
         self.last_key_time = 0
         self.target_position = None
-        self.TARGET_DIST = 100.0
+        self.TARGET_DIST = 200.0
         self.ARRIVE_DIST = 2.0
         self.manual_speed = 2.0
         self.manual_vx, self.manual_vy = 0.0, 0.0

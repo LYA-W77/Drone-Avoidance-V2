@@ -29,6 +29,11 @@ class FlightController:
         return airsim.to_eularian_angles(state.kinematics_estimated.orientation)[2]
 
     def move_by_velocity(self, vx, vy, vz=0, duration=0.25):
+        #强制转换为python 原生floot(避免numpy类型序列化问题)
+        vx = float(vx)
+        vy = float(vy)
+        vz = float(vz)
+        
         self.client.moveByVelocityBodyFrameAsync(
             vx, vy, vz, duration,
             airsim.DrivetrainType.ForwardOnly,
